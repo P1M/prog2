@@ -11,9 +11,7 @@ package Produtos;
  */
 public class Produtos {
     int idProdutos;
-String bebidas;
-String camisinha;
-String cigarros;
+String nome;
 int preco;
 int quantidade;
 }

@@ -25,13 +25,10 @@ public class DAOProdutos {
         PreparedStatement ps = null;
         try{
 
-            ps = c.prepareStatement("INSERT INTO Produtos(idProdutos, Bebidas, Camisinha, Cigarros, Preco, Quantidade) VALUES (?,?,?,?,?,?)");
-            ps.setInt(1,produtos.idProdutos);
-            ps.setString(2,produtos.bebidas);
-            ps.setString(3,produtos.camisinha);
-            ps.setString(4,produtos.cigarros);
-            ps.setInt(5,produtos.preco);
-            ps.setInt(6,produtos.quantidade);
+            ps = c.prepareStatement("INSERT INTO Produtos(Nome, Preco, Quantidade) VALUES (?,?,?)");
+            ps.setString(1,produtos.nome);
+            ps.setInt(2,produtos.preco);
+            ps.setInt(3,produtos.quantidade);
             ps.executeUpdate();
             ps.close();
         }catch (SQLException e){

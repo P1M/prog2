@@ -5,6 +5,7 @@
  */
 package Produtos;
 
+import static java.lang.Integer.parseInt;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -121,6 +122,11 @@ public class CadastraProdutos extends javax.swing.JFrame {
             DAOProdutos daoprodutos = new DAOProdutos();
             
             Produtos produtos1 = new Produtos();
+            produtos1.nome = jTextField1.getText();
+            produtos1.preco = parseInt(jTextField2.getText());
+            produtos1.quantidade = parseInt(jTextField3.getText());
+            
+            daoprodutos.adicionar(produtos1);
             
 // TODO add your handling code here:
         } catch (ClassNotFoundException ex) {
