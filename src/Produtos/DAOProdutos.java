@@ -25,7 +25,7 @@ public class DAOProdutos {
         PreparedStatement ps = null;
         try{
 
-            ps = c.prepareStatement("INSERT INTO Produtos(Nome, Preco, Quantidade) VALUES (?,?,?)");
+            ps = c.prepareStatement("INSERT INTO Produtos(Nome, Preco, Quantidade) VALUES (?,?,?);");
             ps.setString(1,produtos.nome);
             ps.setInt(2,produtos.preco);
             ps.setInt(3,produtos.quantidade);
