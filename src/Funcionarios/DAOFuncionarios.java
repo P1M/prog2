@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import ConnectionDB.ConnectionFactory;
-import
+
 /**
  *
  * @author joao
@@ -38,22 +38,24 @@ public class DAOFuncionarios {
             e.printStackTrace();
         }
     }
-        public ResultSet select (){
+        public ResultSet select () throws SQLException{
         PreparedStatement ps = null;
         try {
             ps = c.prepareStatement("SELECT * FROM Funcionarios;");
-                        ResultSet resultado = ps.executeQuery();
-                                    ps.close();
+                        
+                                   // ps.close();
 
-                                return resultado;
 
 
     
             //ps.executeUpdate();
         }catch(SQLException e){
             e.printStackTrace();
-        }
+        }                                ResultSet resultado =  ps.executeQuery();
+return resultado;
+//ps.close();
+
     }
-           
+
     
 }
