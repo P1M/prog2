@@ -130,7 +130,7 @@ CadastraProdutos cadastraProdutos;
         cadastraFuncionarios = new CadastraFuncionarios();
         cadastraFuncionarios.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         // cadastraClientes.setSize(200,200);
-        cadastraFuncionarios.setVisible(true)
+        cadastraFuncionarios.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
