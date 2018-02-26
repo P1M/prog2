@@ -7,11 +7,14 @@ package TelaPrincipal;
 
 import javax.swing.JFrame;
 import Clientes.CadastraClientes;
+import Clientes.ExcluirCliente;
 import Funcionarios.CadastraFuncionarios;
+import Funcionarios.ExcluirFuncionario;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import Produtos.CadastraProdutos;
+import Produtos.ExcluirProduto;
 
 /**
  *
@@ -38,10 +41,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,6 +62,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
+        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, 0));
+        jMenuItem6.setText("Excluir");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem6);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Produtos");
@@ -69,6 +84,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem2);
 
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, 0));
+        jMenuItem5.setText("Excluir");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem5);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Funcionários");
@@ -81,6 +105,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jMenuItem3);
+
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, 0));
+        jMenuItem4.setText("Excluir");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem4);
 
         jMenuBar1.add(jMenu3);
 
@@ -133,6 +166,48 @@ CadastraProdutos cadastraProdutos;
         cadastraFuncionarios.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        try {
+            ExcluirFuncionario excluirfuncionario;
+            excluirfuncionario = new ExcluirFuncionario();
+            excluirfuncionario.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            // cadastraClientes.setSize(200,200);
+            excluirfuncionario.setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        try {
+            ExcluirProduto excluirproduto;
+            excluirproduto = new ExcluirProduto();
+            excluirproduto.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            // cadastraClientes.setSize(200,200);
+            excluirproduto.setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        try {
+            ExcluirCliente excluircliente;
+            excluircliente = new ExcluirCliente();
+            excluircliente.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            // cadastraClientes.setSize(200,200);
+            excluircliente.setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -176,5 +251,8 @@ CadastraProdutos cadastraProdutos;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     // End of variables declaration//GEN-END:variables
 }
