@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import ConnectionDB.ConnectionFactory;
+import java.sql.ResultSet;
 
 
 /**
@@ -38,5 +39,38 @@ public class DAOProdutos {
 
 
     }
+    public ResultSet select() throws SQLException {
+        PreparedStatement ps = null;
+        try {
+            ps = c.prepareStatement("SELECT * FROM Produtos;");
+
+            // ps.close();
+            //ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        ResultSet resultado = ps.executeQuery();
+        return resultado;
+//ps.close();
+
+
+
+    }
     
+    
+    public void deletarProduto(int id){
+        
+        PreparedStatement ps = null;
+        try {
+            ps = c.prepareStatement("DELETE FROM Produtos WHERE idProdutos = ?;");
+            ps.setInt(1, id);
+            ps.executeUpdate();
+            ps.close();
+            // ps.close();
+            //ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }   
+        
+    }
 }

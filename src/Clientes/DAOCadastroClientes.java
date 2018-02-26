@@ -14,6 +14,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import ConnectionDB.ConnectionFactory;
+import java.sql.ResultSet;
 
 public class DAOCadastroClientes {
     private Connection c;
@@ -50,6 +51,38 @@ public class DAOCadastroClientes {
 
 
 
+    }
+    
+    public ResultSet select() throws SQLException {
+        PreparedStatement ps = null;
+        try {
+            ps = c.prepareStatement("SELECT * FROM CadastroClientes;");
+
+            // ps.close();
+            //ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        ResultSet resultado = ps.executeQuery();
+        return resultado;
+//ps.close();
+
+    }
+    
+    public void deletarCliente(int cpf){
+        
+        PreparedStatement ps = null;
+        try {
+            ps = c.prepareStatement("DELETE FROM CadastroClientes WHERE Cpf = ?;");
+            ps.setInt(1, cpf);
+            ps.executeUpdate();
+            ps.close();
+            // ps.close();
+            //ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }   
+        
     }
 }
 
